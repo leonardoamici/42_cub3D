@@ -6,21 +6,21 @@
 /*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:41:03 by lamici            #+#    #+#             */
-/*   Updated: 2023/07/26 12:02:43 by lamici           ###   ########.fr       */
+/*   Updated: 2023/07/28 11:09:27 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
-
-# define DEBUG printf("ciao\n")
-
 # include "Libft/libft.h"
 # include "minilibx-linux/mlx.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <math.h>
+# define DEBUG printf("ciao\n")
+# define PI 3.1415926535
 
 typedef	struct s_image
 {
