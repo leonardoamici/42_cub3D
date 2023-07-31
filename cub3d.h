@@ -6,7 +6,7 @@
 /*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:41:03 by lamici            #+#    #+#             */
-/*   Updated: 2023/07/28 11:09:27 by lamici           ###   ########.fr       */
+/*   Updated: 2023/07/31 17:07:11 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # include <math.h>
 # define DEBUG printf("ciao\n")
 # define PI 3.1415926535
+# define RIGHT_ARROW 65361
+# define LEFT_ARROW 65363
+# define ESC 65307
 
 typedef	struct s_image
 {
@@ -32,26 +35,35 @@ typedef	struct s_image
 
 typedef struct	s_boi
 {
-	int x;
 	void *boi;
 	void *death;
-	int y;
-	int old_x;
-	int old_y;
 }				t_boi;
 
-typedef struct s_game
+typedef struct	s_coord
+{
+	float pa;
+	float pdx;
+	float pdy;
+	float px;
+	float py;
+	float old_px;
+	float old_py;
+}				t_coord;
+
+typedef struct	s_game
 {
 	t_image	n;
 	t_image	s;
 	t_image	w;
 	t_image	e;
 	t_boi	imgs;
+	t_coord	pos;
 	void	*win;
 	void	*mlx;
 	char	*ceiling;
 	char	*floor;
 	char	**map;
-}	t_game;
+}				t_game;
+
 
 #endif
