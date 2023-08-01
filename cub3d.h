@@ -6,7 +6,7 @@
 /*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:41:03 by lamici            #+#    #+#             */
-/*   Updated: 2023/07/31 17:07:11 by lamici           ###   ########.fr       */
+/*   Updated: 2023/08/01 11:37:07 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <math.h>
 # define DEBUG printf("ciao\n")
 # define PI 3.1415926535
-# define RIGHT_ARROW 65361
-# define LEFT_ARROW 65363
+# define RIGHT_ARROW 65363
+# define LEFT_ARROW 65361
 # define ESC 65307
 
 typedef	struct s_image
@@ -65,5 +65,13 @@ typedef struct	s_game
 	char	**map;
 }				t_game;
 
+int		ft_deal_key(int key, t_game *w);
+int		ft_put_map(t_game *w);
+void 	ft_init_coord(t_coord *pos);
+int		ft_close(t_game *w);
+void	ft_delete_my_boy(t_game *w);
+void	ft_init_coord(t_coord *pos);
+void	ft_init_boi(t_game *w);
+void	ft_put_pipo(t_game *w, int color);
 
 #endif

@@ -6,7 +6,10 @@ LIBFT = Libft/libft.a
 
 MLX = minilibx-linux/libmlx.a
 
-SRC =	main.c
+SRC =	main.c \
+		movement_managing.c \
+		drawing_board.c \
+		cleanup.c
 
 PTH = source/
 
