@@ -6,7 +6,7 @@
 /*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:25:38 by lamici            #+#    #+#             */
-/*   Updated: 2023/08/01 11:28:25 by lamici           ###   ########.fr       */
+/*   Updated: 2023/08/01 16:41:44 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,50 @@ void ft_init_coord(t_coord *pos)
 	pos->old_px = pos->px; 
 	pos->old_py = pos->py;
 }
+void	ft_first_ray(t_game *w)
+{
+	float	atan;
+	float	rx;
+	float	ry;
+	float	xo;
+	float	yo;
+	int		r,mx,my,dof = 0;
+
+	atan = -1 / tan(w->pos.pa);
+	if (w->pos.pa == 0 || w->pos.pa == PI)
+	{
+		rx = w->pos.px;
+		ry = w->pos.py;
+	}
+	else if (w->pos.pa < PI)
+	{
+		ry = ((int)w->pos.py / 64) * 64 - 0.0001;
+		rx = (w->pos.py - ry) * atan + w->pos.px;
+		yo = -64;
+		xo = -yo * atan;
+	}
+	else if (w->pos.pa > PI)
+	{
+		ry = ((int)w->pos.py / 64) * 64 + 64;
+		rx = (w->pos.py - ry) * atan + w->pos.px;
+		yo = 64;
+		xo = -yo * atan;
+	}
+	while (dof < 8)
+	{
+		mx = (int)rx / 64;
+		my = (int)ry / 64;
+		if ((my < 8 && mx < 8) && w->map[my][mx] == '1')
+			dof = 8;
+		else
+		{
+			rx += xo;
+			ry += yo;
+			dof += 1;
+		}
+	}
+}
+
 int	ft_deal_key(int key, t_game *w)
 {
 	if (key == ESC)
