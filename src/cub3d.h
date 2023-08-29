@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:43:14 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/28 16:58:50 by abettini         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:53:41 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@
 
 # define SPACES "\t\n\v\f\r "
 # define WIN_NAME "cub3d"
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1080
-# define SPEED_MOVE 0.15
-# define SPEED_ROT 0.05
+# define WIN_WIDTH 1000
+# define WIN_HEIGHT 500
+# define SPEED_MOVE 0.07
+# define SPEED_ROT 0.03
 # define WALL_OFFSET 0.1
 # define PI 3.1415926535
 
@@ -122,6 +122,8 @@ typedef struct s_game
 	t_data		d;
 	int			door_x;
 	int			door_y;
+	int			mouse_x;
+	int			mouse_y;
 	int			i_c_door;
 	int			ceiling;
 	int			floor;

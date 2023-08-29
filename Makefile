@@ -81,9 +81,12 @@ $(OBJ_F)%.o : $(SRC_F)%.c
 
 all: $(NAME)
 
-$(NAME): libcomp $(OBJ)
+$(NAME): mlx_comp libcomp $(OBJ)
 	$(CC) $(CC_FLAGS) $(OBJ) $(LIBFT) $(MLX) $(MLX_FLAGS) -O3 -o $(NAME)
 	echo "$(CYAN)[make - $(NAME)]$(NOCOL)"
+
+mlx_comp:
+	make -C $(MLX_F)
 
 libcomp:
 	make -C $(LFT_F)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   deal_key.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 09:27:34 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/28 17:15:04 by abettini         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:07:16 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ int	ft_release_key(int key, t_game *game)
 
 int	ft_loop(t_game *game)
 {
-	if (!game->event && !game->keys_pressed)
-		return (1);
+	mlx_mouse_get_pos(game->mlx, game->win.ptr, &game->mouse_x, &game->mouse_y);
+	mlx_mouse_hide(game->mlx, game->win.ptr);
 	if (game->keys_pressed & UP_P)
 		ft_key_move_up(game);
 	if (game->keys_pressed & DOWN_P)
@@ -86,11 +86,13 @@ int	ft_loop(t_game *game)
 		ft_key_move_left(game);
 	if (game->keys_pressed & RIGHT_P)
 		ft_key_move_right(game);
-	if (game->keys_pressed & ROT_L_P)
+	if (game->keys_pressed & ROT_L_P || game->mouse_x < WIN_WIDTH / 2)
 		ft_key_rotate_left(game);
-	if (game->keys_pressed & ROT_R_P)
+	if (game->keys_pressed & ROT_R_P || game->mouse_x > WIN_WIDTH / 2)
 		ft_key_rotate_right(game);
 	ft_new_bg(game);
 	game->event = 0;
 	return (0);
 }
+//if (!game->event && !game->keys_pressed)
+//	return (1);

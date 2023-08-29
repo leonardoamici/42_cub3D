@@ -6,7 +6,7 @@
 /*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 10:40:53 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/14 10:33:46 by abettini         ###   ########.fr       */
+/*   Updated: 2023/08/29 10:35:21 by abettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_col_check(char *str, int *color)
 		ft_dprintf(2, "Error\nInvalid info\n");
 		return (1);
 	}
-	else if (*color != -1)
+	if (*color != -1)
 	{
 		ft_dprintf(2, "Error\nReassignment of color.\n");
 		return (1);

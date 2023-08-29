@@ -6,7 +6,7 @@
 /*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:40:11 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/25 16:33:02 by abettini         ###   ########.fr       */
+/*   Updated: 2023/08/29 10:56:35 by abettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_compare_one(t_game *game, char **str)
 	int	check;
 
 	check = 0;
+	if (!**str)
+		return (0);
 	if (!ft_strncmp(*str, "NO", 2))
 		check = ft_get_img_path(&game->n, str);
 	else if (!ft_strncmp(*str, "SO", 2))
@@ -33,7 +35,7 @@ int	ft_compare_one(t_game *game, char **str)
 	else if (!ft_strncmp(*str, "C", 1))
 		check = ft_get_color(&game->ceiling, str);
 	else if (**str)
-		check = -1;
+		check = ft_dprintf(2, "Error\nInvalid info.\n") * 0 - 1;
 	return (check);
 }
 
@@ -58,6 +60,7 @@ int	ft_get_img_col(t_game *game, char *str, int old_check)
 int	ft_get_textures(t_game *game, int fd)
 {
 	char	*line;
+	char	*tmp;
 	int		check;
 
 	check = 0;
@@ -66,11 +69,14 @@ int	ft_get_textures(t_game *game, int fd)
 		line = get_next_line(fd);
 		if (!line)
 			break ;
+		tmp = line;
 		check = ft_get_img_col(game, line, check);
-		free(line);
+		free(tmp);
 	}
-	if (check != 6)
+	if (check == -1)
 		return (1);
+	else if (check != 6) 
+		return (ft_dprintf(2, "Error\nNot enough info.\n"));
 	return (0);
 }
 

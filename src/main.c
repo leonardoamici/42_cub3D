@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:40:37 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/28 17:03:40 by abettini         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:33:51 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	ft_info_init(t_game *game)
 	game->i_c_door = 0;
 	game->door_x = 0;
 	game->door_y = 0;
+	game->mouse_x = WIN_HEIGHT / 2;
+	game->mouse_y = WIN_WIDTH / 2;
 }
 
 int	main(int ac, char **av)
