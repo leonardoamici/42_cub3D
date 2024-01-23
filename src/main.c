@@ -6,7 +6,7 @@
 /*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:40:37 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/29 15:33:51 by lamici           ###   ########.fr       */
+/*   Updated: 2024/01/23 14:59:30 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	main(int ac, char **av)
 	t_game	game;
 
 	if (ac != 2)
-		return (ft_dprintf(2, "Invalid number of arguments.\n") * 0 + 1);
+		return (ft_printf_fd(2, "Invalid number of arguments.\n") * 0 + 1);
 	ft_info_init(&game);
 	if (ft_get_info(&game, av[1]))
 		return (1);

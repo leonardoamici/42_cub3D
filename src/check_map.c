@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:41:18 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/28 16:56:47 by abettini         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:59:30 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,12 @@ int	ft_elem_count_check(char **mat, char *str)
 int	ft_check_map(char **mat)
 {
 	if (!mat || !*mat)
-		return (ft_dprintf(2, "Error\nEmpty map.\n") * 0 + 1);
+		return (ft_printf_fd(2, "Error\nEmpty map.\n") * 0 + 1);
 	else if (ft_elem_check(mat, "NSWE01D "))
-		return (ft_dprintf(2, "Error\nInvalid elements.\n") * 0 + 1);
+		return (ft_printf_fd(2, "Error\nInvalid elements.\n") * 0 + 1);
 	else if (ft_elem_count_check(mat, "NSWE"))
-		return (ft_dprintf(2, "Error\nInvalid amount of elements.\n") * 0 + 1);
+		return (ft_printf_fd(2, "Error\nInvalid amount of elements.\n") * 0 + 1);
 	else if (ft_wall_check(mat, "NSWE0"))
-		return (ft_dprintf(2, "Error\nInvalid walls.\n") * 0 + 1);
+		return (ft_printf_fd(2, "Error\nInvalid walls.\n") * 0 + 1);
 	return (0);
 }

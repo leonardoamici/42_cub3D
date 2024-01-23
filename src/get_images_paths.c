@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_images_paths.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 10:40:15 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/29 10:38:33 by abettini         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:59:30 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ int	ft_check_img_err(char *str, char *path)
 {
 	if (!ft_isspace(str[2]))
 	{
-		ft_dprintf(2, "Error\nInvalid info\n");
+		ft_printf_fd(2, "Error\nInvalid info\n");
 		return (1);
 	}
 	if (path != 0)
 	{
-		ft_dprintf(2, "Error\nReassignment of texture.\n");
+		ft_printf_fd(2, "Error\nReassignment of texture.\n");
 		return (1);
 	}
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_colors.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 10:40:53 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/29 10:35:21 by abettini         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:59:30 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ int	ft_col_check(char *str, int *color)
 {
 	if (!ft_isspace(str[1]))
 	{
-		ft_dprintf(2, "Error\nInvalid info\n");
+		ft_printf_fd(2, "Error\nInvalid info\n");
 		return (1);
 	}
 	if (*color != -1)
 	{
-		ft_dprintf(2, "Error\nReassignment of color.\n");
+		ft_printf_fd(2, "Error\nReassignment of color.\n");
 		return (1);
 	}
 	return (0);
@@ -79,7 +79,7 @@ int	ft_get_color(int *color, char **s)
 	if (r != -1 && g != -1 && b != -1)
 		*color = (r << 16) + (g << 8) + (b << 0);
 	else
-		return (ft_dprintf(2, "Error\nInvalid color.\n") * 0 - 1);
+		return (ft_printf_fd(2, "Error\nInvalid color.\n") * 0 - 1);
 	*s = str;
 	return (1);
 }

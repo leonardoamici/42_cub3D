@@ -27,7 +27,7 @@ MLX_FLAGS = -lm -lX11 -lXext
 
 SRC_F = src/
 MLX_F = minilibx-linux/
-LFT_F = libft/
+LFT_F = Libft/
 OBJ_F = obj/
 
 #----------------------------------------------

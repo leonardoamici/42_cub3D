@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_textures.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 10:40:11 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/29 10:56:35 by abettini         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:59:30 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_compare_one(t_game *game, char **str)
 	else if (!ft_strncmp(*str, "C", 1))
 		check = ft_get_color(&game->ceiling, str);
 	else if (**str)
-		check = ft_dprintf(2, "Error\nInvalid info.\n") * 0 - 1;
+		check = ft_printf_fd(2, "Error\nInvalid info.\n") * 0 - 1;
 	return (check);
 }
 
@@ -76,7 +76,7 @@ int	ft_get_textures(t_game *game, int fd)
 	if (check == -1)
 		return (1);
 	else if (check != 6) 
-		return (ft_dprintf(2, "Error\nNot enough info.\n"));
+		return (ft_printf_fd(2, "Error\nNot enough info.\n"));
 	return (0);
 }
 
