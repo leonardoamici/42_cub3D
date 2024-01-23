@@ -6,14 +6,14 @@
 /*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:43:14 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/29 15:53:41 by lamici           ###   ########.fr       */
+/*   Updated: 2024/01/23 14:48:48 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "../libft/libft.h"
+# include "../Libft/libft.h"
 # include "../minilibx-linux/mlx.h"
 
 # include "keycodes.h"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_stuff.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:14:26 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/28 17:26:38 by abettini         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:49:37 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_destroy_imgs(t_game *game)
 
 void	ft_free_game(t_game *game)
 {
-	ft_freemat(game->map);
+	ft_kill_matrix(game->map);
 	ft_destroy_imgs(game);
 	ft_free_imgs_paths(game);
 	mlx_destroy_window(game->mlx, game->win.ptr);

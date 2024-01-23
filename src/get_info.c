@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <abettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lamici <lamici@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 10:46:44 by abettini          #+#    #+#             */
-/*   Updated: 2023/08/29 10:45:48 by abettini         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:49:37 by lamici           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_err_management(t_game *game)
 {
 	get_next_line(-2);
 	ft_free_imgs_paths(game);
-	ft_freemat(game->map);
+	ft_kill_matrix(game->map);
 	mlx_destroy_display(game->mlx);
 	free(game->mlx);
 }
